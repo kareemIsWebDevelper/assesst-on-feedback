@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="preconnect" href="https://fonts.google.com/specimen/Overpass">
+  <title>Frontend Mentor | Interactive rating component</title>  
+</head>
+<body>
+  <main>
+    <div id="container">
+        <img v-bind:src="image" v-bind:alt="description">          
+        <h1>{{pa1}}</h1>
+        <p>{{pa20}}</p>
+        <p>{{pa21}}</p>
+        <p>{{pa22}}</p>
+        <div class="circle">
+          <div>{{one}}</div>
+          <div>{{two}}</div>
+          <div>{{three}}</div>
+          <div class="four" onclick="colorMe();">{{four}}</div>
+          <div>{{five}}</div>
+        </div>
+        <button id="button" onclick="reflect();">{{btn}}</button>
+    </div>
+
+
+      <div id="onSubmit">
+        <img v-bind:src="img" v-bind:alt="description">
+        <span>{{pa3}}</span>
+        <h1>{{pa4}}</h1>
+        <p>{{pa50}}</p>
+        <p>{{pa51}}</p>
+        <p>{{pa52}}</p>
+      </div>
+
+    </main>
+    <script src="main.js"></script>
+    <script>
+      const mount = app.mount('#container');
+    </script>
+    <script>
+    var onSubmit = document.getElementById("onSubmit");
+    (function (){
+    onSubmit.style.display = "none";
+    })();
+
+    var container = document.getElementById("container");
+
+    function reflect(){
+    container.style.display = "none";
+    onSubmit.style.display = "block";
+};    
+    function colorMe(){
+    document.querySelector(".four").style.backgroundColor = "hsl(25, 97%, 53%)";
+    document.querySelector(".four").style.opacity = 1;
+};    
+</script>
+</body>
+</html>
+
+
